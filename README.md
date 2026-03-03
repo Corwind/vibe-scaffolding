@@ -1,6 +1,34 @@
 # Vibe Scaffolding
 
-A production-ready, generic React scaffolding with a modern tech stack, full testing infrastructure, and Docker support.
+A production-ready React project template with a modern tech stack, full testing infrastructure, and Docker support.
+
+## Generate a New Project
+
+```bash
+# Clone the template
+git clone <repo-url> vibe-scaffolding
+cd vibe-scaffolding
+
+# Generate your project
+./bin/create.sh my-cool-app
+
+# Or specify a target directory
+./bin/create.sh my-cool-app ~/projects/my-cool-app
+
+# Skip npm install (faster, do it yourself later)
+./bin/create.sh my-cool-app --no-install
+
+# Skip git init
+./bin/create.sh my-cool-app --no-git
+```
+
+The generator will:
+
+- Copy all template files to a new directory
+- Replace the project name everywhere (package.json, Makefile, env files, README, HTML title, etc.)
+- Derive a human-readable title from the kebab-case name (`my-cool-app` → `My Cool App`)
+- Initialize a git repo with an initial commit
+- Install npm dependencies
 
 ## Tech Stack
 
@@ -121,7 +149,7 @@ Copy `.env.example` to `.env` and configure:
 | Variable            | Description       | Default                     |
 | ------------------- | ----------------- | --------------------------- |
 | `VITE_API_BASE_URL` | API base URL      | `http://localhost:3001/api` |
-| `VITE_APP_TITLE`    | Application title | `Vibe Scaffolding`          |
+| `VITE_APP_TITLE`    | Application title | Project title               |
 
 ## Docker
 

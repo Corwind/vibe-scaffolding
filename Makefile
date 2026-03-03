@@ -1,3 +1,5 @@
+APP_NAME := $(shell node -p "require('./package.json').name")
+
 .PHONY: install dev build preview lint format format-check typecheck test test-run test-e2e docker-dev docker-build docker-run clean
 
 install:
@@ -37,10 +39,10 @@ docker-dev:
 	docker compose up --build
 
 docker-build:
-	docker build -t vibe-app .
+	docker build -t $(APP_NAME) .
 
 docker-run:
-	docker run -p 8080:80 vibe-app
+	docker run -p 8080:80 $(APP_NAME)
 
 clean:
 	rm -rf node_modules dist coverage playwright-report test-results

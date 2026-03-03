@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router";
 import { ErrorBoundary } from "@/components/common";
+import { env } from "@/config/env";
 
 export function RootLayout() {
   return (
@@ -10,7 +11,7 @@ export function RootLayout() {
             to="/"
             className="text-xl font-bold tracking-tight text-primary"
           >
-            Vibe Scaffolding
+            {env.appTitle}
           </Link>
           <ul className="flex items-center gap-6">
             <li>
@@ -33,7 +34,7 @@ export function RootLayout() {
 
       <footer className="border-t border-gray-200 bg-surface">
         <div className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-text-muted sm:px-6 lg:px-8">
-          Vibe Scaffolding &mdash; Built with React, TypeScript & Tailwind CSS
+          {env.appTitle} &mdash; Built with React, TypeScript & Tailwind CSS
         </div>
       </footer>
     </div>
