@@ -1,4 +1,5 @@
 import { PageLayout } from "@/components/layout";
+import { env } from "@/config/env";
 
 const features = [
   {
@@ -38,7 +39,7 @@ export function HomePage() {
     <PageLayout>
       <div className="py-12 text-center">
         <h1 className="text-5xl font-extrabold tracking-tight text-text">
-          Vibe Scaffolding
+          {env.appTitle}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">
           A modern React starter built with TypeScript, Tailwind CSS v4,
